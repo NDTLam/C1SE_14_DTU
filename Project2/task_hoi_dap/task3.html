@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style1.css">
+    <link rel="shortcur icon" href="./img/favicon.png" type="image/png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/task_hoi_dap.css">
+</head>
+<body>
+    <header>
+        <div class="inner-width">
+         <!--<a href="#" class="logo"><img src="image/logo.png" alt=""></a>-->
+          <i class="menu-toggle-btn fas fa-bars"></i>
+          <nav class="navigation-menu">
+            <a href="index.html"><i class="fas fa-home home"></i> Trang Chủ</a>
+           <!-- <a href="#"><i class="fas fa-align-left about"></i> About</a>-->
+            <a href="SoLieuCovid.html"><i class="fab fa-buffer works"></i> Số Liệu Covid</a>
+            <a href="TinTucCovid.html"><i class="fas fa-users team"></i> Tin Tức Covid</a>
+            <a href="Hoidap.html " class="active"><i class="fas fa-headset contact"></i> Hỏi Đáp Tin Tức</a>
+          </nav>
+        </div>
+      </header>
+      <script type="text/javascript">
+        $(".menu-toggle-btn").click(function(){
+          $(this).toggleClass("fa-times");
+          $(".navigation-menu").toggleClass("active");
+        });
+      </script>
+
+<h1>Coronavirus disease(COVID-19)</h1>
+
+<div class="accordion">
+  <div class="accordion-item">
+    <div class="accordion-item-header">
+      Can COVID-19 be passed through Breastfeeding ?
+    </div>
+    <div class="accordion-item-body">
+      <div class="accordion-item-body-content">
+        <p>Transmission of active COVID-19 (virus that can cause infection) through breast milk and breastfeeding has not been detected to date. There is no reason to avoid or stop breastfeeding.</p> 
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <div class="accordion-item-header">
+      In Communites where COVID-19 is prevalent, should mothers breastfeed ?
+    </div>
+    <div class="accordion-item-body">
+      <div class="accordion-item-body-content">
+        <p>Yes. In all socio-economic settings, breastfeeding improves survival and provides lifelong health and development advantages to newborns and infants. Breastfeeding also improves the health of mothers.</p> 
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <div class="accordion-item-header">
+     Can Women with confirmed or supspected COVID-19 breastfeed ?
+     </div>
+    <div class="accordion-item-body">
+      <div class="accordion-item-body-content">
+        <p>Yes. Women with confirmed or suspected COVID-19 can breastfeed if they wish to do so. They should:</p>
+        <ul style="padding-left: 1rem;">
+            <li>Wash hands frequently with soap and water or use alcohol-based hand rub and especially before touching the baby;</li>
+            <li>Wear a medical mask during any contact with the baby, including while feeding;</li>
+            <li>Sneeze or cough into a tissue. Then dispose of it immediately and wash hands again;</li>
+            <li>Routinely clean and disinfect surfaces that mothers have touched.</li>
+          </ul>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <div class="accordion-item-header">
+     Can a breastfeeding woman get vanccinated against COVID-19 ?
+     </div>
+    <div class="accordion-item-body">
+      <div class="accordion-item-body-content">
+        <p>Yes, women who are breastfeeding can take the vaccine when it becomes available to them.</p>
+        <p>None of the currently approved vaccines use the live virus, so there is no risk of passing the virus to the baby through breastmilk.</p>
+        <p>There is also some evidence that, after vaccination, antibodies are found in breastmilk, which may help protect the baby against COVID-19.</p>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <div class="accordion-item-header">
+     I have comfirmed or suspected COVID-19 and was unable to breastfeed,when can i start to breastfeed again ?
+     </div>
+    <div class="accordion-item-body">
+      <div class="accordion-item-body-content">
+        You can start to breastfeed when you feel well enough to do so. 
+        There is no fixed time interval to wait after confirmed or suspected COVID-19. 
+        There is no evidence that breastfeeding changes the clinical course of COVID-19 in a mother. 
+        Health workers or breastfeeding counsellors should support you to relactate.
+      </div>
+    </div>
+  </div>  
+</div>
+
+<script>
+    const accordionItemHeaders = document.querySelectorAll(".accordion-item-header");
+
+accordionItemHeaders.forEach(accordionItemHeader => {
+  accordionItemHeader.addEventListener("click", event => {
+    
+    // Uncomment in case you only want to allow for the display of only one collapsed item at a time!
+    
+     const currentlyActiveAccordionItemHeader = document.querySelector(".accordion-item-header.active");
+     if(currentlyActiveAccordionItemHeader && currentlyActiveAccordionItemHeader!==accordionItemHeader) {
+       currentlyActiveAccordionItemHeader.classList.toggle("active");
+      currentlyActiveAccordionItemHeader.nextElementSibling.style.maxHeight = 0;
+     }
+
+    accordionItemHeader.classList.toggle("active");
+    const accordionItemBody = accordionItemHeader.nextElementSibling;
+    if(accordionItemHeader.classList.contains("active")) {
+      accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
+    }
+    else {
+      accordionItemBody.style.maxHeight = 0;
+    }
+    
+  });
+});
+</script>
+</body>
+</html>
